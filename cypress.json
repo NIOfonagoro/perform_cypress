@@ -1,1 +1,6 @@
-{}
+{
+    "projectId": "PerformPlus",
+    "env": {
+        "demo-stage": "https://demo-stage-profile.performplus.pwc.com/"
+    }
+}

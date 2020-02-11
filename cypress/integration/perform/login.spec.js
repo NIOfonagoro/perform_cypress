@@ -1,11 +1,37 @@
-describe('My First Test', function () {
-    it('Does not do much!', function () {
-        cy.visit('https://demo-stage-profile.performplus.pwc.com/')
-        cy.get(':nth-child(2) > .form-control').type(`nicholas@play-consult.net`)
-        cy.get(':nth-child(3) > .form-control').type(`Perform0102$`)
-        cy.get('.btn').click()
+const demoStage = [
+    {
+        name: "Admin",
+        username: "nicholas+luffy@play-consult.net",
+        password: "Perform0102$"
+    },
+    {
+        name: "Team Manager",
+        username: "nicholas+zoro@play-consult.net",
+        password: "Perform0102$"
 
-        cy.url().should('include', '/dashboard')
-        //cy.get('url').should('contain.te','dashboard')
+    },
+    {
+        name: "Team Leader",
+        username: "nicholas+sanji@play-consult.net",
+        password: "Perform0102$"
+    },
+    {
+        name: "Employee",
+        username: "nicholas+nami@play-consult.net",
+        password: "Perform0102$"
+    }
+]
+
+
+describe('Login Test', function () {
+    demoStage.forEach((user) => {
+        it('Logs in with user: ' + user.name, function () {
+            cy.visit(Cypress.env('demo-stage'))
+            cy.get('[name=email]').type(user.username)
+            cy.get('[name=password]').type(user.password)
+            cy.get('[type=submit').click()
+
+            cy.url().should('include', '/dashboard')
+        })
     })
 })

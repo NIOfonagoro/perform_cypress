@@ -1,2 +1,2 @@
-node_modules
-cypress/integration/config.js
+node_modules/
+configs/

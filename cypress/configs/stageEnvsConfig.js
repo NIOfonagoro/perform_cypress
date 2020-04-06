@@ -2,7 +2,7 @@ const CURRENT_ENV_STRING = 'demoStage';
 const password1 = 'Perform#0401';
 const password2 = 'Performplus123';
 
-const prodConfig = {
+const StageConfig = {
     demoStage: {
         url: 'https://demo-stage-profile.performplus.pwc.com/',
         users: [
@@ -38,7 +38,7 @@ const prodConfig = {
         ]
     },
 
-    absaProd: {
+    absaStage: {
         url: 'https://absa-stage-profile.performplus.pwc.com/',
         users: [
             {
@@ -73,7 +73,7 @@ const prodConfig = {
         ]
     },
 
-    adeccoProd: {
+    adeccoStage: {
         url: 'https://adecco-stage-profile.performplus.pwc.com/',
         users: [
             {
@@ -107,7 +107,7 @@ const prodConfig = {
         ]
     },
 
-    bpProd: {
+    bpStage: {
         url: 'https://bp-stage-profile.performplus.pwc.com/',
         users: [
             {
@@ -141,7 +141,7 @@ const prodConfig = {
         ]
     },
 
-    haringeyProd: {
+    haringeyStage: {
         url: 'https://haringey-stage-profile.performplus.pwc.com/',
         users: [
             {
@@ -175,7 +175,7 @@ const prodConfig = {
         ]
     },
 
-    harrowProd: {
+    harrowStage: {
         url: 'https://harrow-stage-profile.performplus.pwc.com/',
         users: [
             {
@@ -209,7 +209,7 @@ const prodConfig = {
         ]
     },
 
-    lambethProd: {
+    lambethStage: {
         url: 'https://lambeth-stage-profile.performplus.pwc.com/',
         users: [
             {
@@ -243,7 +243,7 @@ const prodConfig = {
         ]
     },
 
-    operateProd: {
+    operateStage: {
         url: 'https://operate-stage-profile.performplus.pwc.com/',
         users: [
             {
@@ -277,7 +277,7 @@ const prodConfig = {
         ]
     },
 
-    omfProd: {
+    omfStage: {
         url: 'https://omf-stage-profile.performplus.pwc.com/',
         users: [
             {
@@ -311,7 +311,7 @@ const prodConfig = {
         ]
     },
 
-    pcseProd: {
+    pcseStage: {
         url: 'https://pcse-stage-profile.performplus.pwc.com/',
         users: [
             {
@@ -345,7 +345,7 @@ const prodConfig = {
         ]
     },
 
-    perftestProd: {
+    perftestStage: {
         url: 'https://perftest-stage-profile.performplus.pwc.com/',
         users: [
             {
@@ -379,7 +379,7 @@ const prodConfig = {
         ]
     },
 
-    pwcukProd: {
+    pwcukStage: {
         url: 'https://pwcuk-stage-profile.performplus.pwc.com/',
         users: [
             {
@@ -413,7 +413,7 @@ const prodConfig = {
         ]
     },
 
-    pwcnzProd: {
+    pwcnzStage: {
         url: 'https://pwcnz-stage-profile.performplus.pwc.com/',
         users: [
             {
@@ -447,7 +447,7 @@ const prodConfig = {
         ]
     },
 
-    rotherhamProd: {
+    rotherhamStage: {
         url: 'https://rotherham-stage-profile.performplus.pwc.com/',
         users: [
             {
@@ -481,7 +481,7 @@ const prodConfig = {
         ]
     },
 
-    sageProd: {
+    sageStage: {
         url: 'https://sage-stage-profile.performplus.pwc.com/',
         users: [
             {
@@ -515,7 +515,7 @@ const prodConfig = {
         ]
     },
 
-    southernWaterProd: {
+    southernWaterStage: {
         url: 'https://southernwater-stage-profile.performplus.pwc.com/',
         users: [
             {
@@ -549,7 +549,7 @@ const prodConfig = {
         ]
     },
 
-    tdProd: {
+    tdStage: {
         url: 'https://td-stage-profile.performplus.pwc.com/',
         users: [
             {
@@ -583,7 +583,7 @@ const prodConfig = {
         ]
     },
 
-    walsallProd: {
+    walsallStage: {
         url: 'https://walsall-stage-profile.performplus.pwc.com/',
         users: [
             {
@@ -620,6 +620,6 @@ const prodConfig = {
 
 module.exports = {
     CURRENT_ENV_STRING,
-    prodConfig,
-    currentConfig: prodConfig[CURRENT_ENV_STRING]
+    StageConfig,
+    currentConfig: StageConfig[CURRENT_ENV_STRING]
 };

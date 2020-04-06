@@ -1,16 +1,16 @@
-const { fullConfig } = require('../config');
+const { prodConfig } = require('../../configs/prodEnvsConfig');
 
-describe('Login Test', function () {
+describe('Login Sanity Test for all production environments', function () {
 
-    for (const envName in fullConfig) {
-        const demoStage = fullConfig[envName];
+    for (const envName in prodConfig) {
+        const prodEnv = prodConfig[envName];
 
         describe('Env name: ' + envName, function () {
-            demoStage.users.forEach((user) => {
+            prodEnv.users.forEach((user) => {
                 it('Logs in with user: ' + user.name, function () {
-                    cy.visit(demoStage.url)
+                    cy.visit(prodEnv.url)
                     cy.get('[name=email]').type(user.username)
-                    cy.get('[name=password]').type(demoStage.password)
+                    cy.get('[name=password]').type(user.password)
                     cy.get('[type=submit').click()
 
                     if (user.isTeamLeader) {

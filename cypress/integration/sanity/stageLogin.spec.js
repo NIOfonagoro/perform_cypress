@@ -1,4 +1,4 @@
-const { prodConfig } = require('../../configs/stageEnvsConfig');
+const { prodConfig } = require('../../../configs/stageEnvsConfig');
 
 describe('Login Sanity Test for all staging environments', function () {
 

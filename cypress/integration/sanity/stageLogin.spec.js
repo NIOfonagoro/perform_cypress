@@ -1,17 +1,17 @@
-const { prodConfig } = require('../../../configs/stageEnvsConfig');
+const { stageConfig } = require('../../../configs/stageEnvsConfig');
 
 describe('Login Sanity Test for all staging environments', function () {
 
-    for (const envName in prodConfig) {
-        const prodEnv = prodConfig[envName];
+    for (const envName in stageConfig) {
+        const stageEnv = stageConfig[envName];
 
         describe('Env name: ' + envName, function () {
-            prodEnv.users.forEach((user) => {
+            stageEnv.users.forEach((user) => {
                 it('Logs in with user: ' + user.name, function () {
-                    cy.visit(prodEnv.url)
+                    cy.visit(stageEnv.url)
                     cy.get('[name=email]').type(user.username)
                     cy.get('[name=password]').type(user.password)
-                    cy.get('[type=submit').click()
+                    cy.get('[type=submit]').click()
 
                     if (user.isTeamLeader) {
                         cy.url().should('include', '/employeeDashboard')
@@ -21,7 +21,7 @@ describe('Login Sanity Test for all staging environments', function () {
 
 
                     // Conditional search for "what's new" modal close button
-                    cy.get('body').then(body => {
+                    /* cy.get('body').then(body => {
                         if (body.find('.whats-new-button-container').length) {
                             console.log('Found a button!!!! YAY');
                             body.find('.whats-new-button-container').forEach(button => button.click());
@@ -29,7 +29,7 @@ describe('Login Sanity Test for all staging environments', function () {
                         else {
                             console.log('no button found!!!')
                         }
-                    })
+                    }) */
                 })
             });
         })

@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "prettier": "^2.0.4"
+  },
   "devDependencies": {
     "cypress": "^4.0.2"
   },

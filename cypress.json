@@ -1,4 +1,8 @@
 {
+    "watchForFileChanges": false,
+    "chromeWebSecurity": true,
+    "viewportWidth": 1280,
+    "viewportHeight": 720,
     "projectId": "PerformPlus",
     "env": {
         "demo-stage": "https://demo-stage-profile.performplus.pwc.com/"

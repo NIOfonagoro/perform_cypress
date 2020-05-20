@@ -29,14 +29,19 @@ Cypress.Commands.add('login', (username, password) => {
     cy.get('[name=password]').type(password)
     cy.get('[type=submit]').click()
 
-    // Conditional search for "what's new" modal close button
-    cy.get('body').then(body => {
-        if (body.find('.whats-new-button-container').length) {
-            console.log('Found a button!!!! YAY');
-            body.find('.whats-new-button-container').forEach(button => button.click());
-        }
-        else {
-            console.log('no button found!!!')
-        }
-    })
+});
+
+Cypress.Commands.add('checkWhatsNew', () => {
+    
+    //Conditional search for "what's new" modal close button
+    cy.wait(3000);
+    // cy.get('body').then(body => {
+    //     if (body.find('.whats-new-button-container')) {
+    //         // console.log('Found a button!!!! YAY');
+    //         // cy.get('.buttonExtra').click();
+    //     }
+    //     else {
+    //         // console.log('no button found!!!')
+    //     }
+    // })
 });

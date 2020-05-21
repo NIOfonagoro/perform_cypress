@@ -24,7 +24,7 @@ describe('KPI flow', () => {
         cy.get('nav').within(() => {
             cy.get('[id="nav-bar-Pre huddle"]').click();
         })
-        cy.get('div').contains('I’m winding down…').click();
+        cy.get('div').contains('I’m getting started!').click();
         cy.get('h1').contains('Daily Goal').should('be.visible')
 
 
@@ -35,7 +35,7 @@ describe('KPI flow', () => {
         cy.get('nav').within(() => {
             cy.get('[id="nav-bar-Pre huddle"]').click();
         })
-        cy.get('div').contains('I’m getting started!').click();
+        cy.get('div').contains('I’m winding down…').click();
         cy.get('h1').contains('Daily Goal').should('be.visible');
 
 

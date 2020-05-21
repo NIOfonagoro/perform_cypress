@@ -34,14 +34,13 @@ Cypress.Commands.add('login', (username, password) => {
 Cypress.Commands.add('checkWhatsNew', () => {
     
     //Conditional search for "what's new" modal close button
-    cy.wait(3000);
-    // cy.get('body').then(body => {
-    //     if (body.find('.whats-new-button-container')) {
-    //         // console.log('Found a button!!!! YAY');
-    //         // cy.get('.buttonExtra').click();
-    //     }
-    //     else {
-    //         // console.log('no button found!!!')
-    //     }
-    // })
+    cy.get('body').then(body => {
+        if (body.find('.whats-new-button-container')) {
+            // console.log('Found a button!!!! YAY');
+            // cy.get('.buttonExtra').click();
+        }
+        else {
+            // console.log('no button found!!!')
+        }
+    })
 });

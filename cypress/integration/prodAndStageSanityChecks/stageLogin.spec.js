@@ -1,17 +1,20 @@
-const { prodConfig } = require('../../../configs/prodEnvsConfig');
+const { stageConfig } = require('../../../configs/stageEnvsConfig');
 
-describe('Login Sanity Test for all production environments', function () {
+describe('Login Sanity Test for all staging environments', function () {
 
-    for (const envName in prodConfig) {
-        const prodEnv = prodConfig[envName];
+    for (const envName in stageConfig) {
+        const stageEnv = stageConfig[envName];
 
         describe('Env name: ' + envName, function () {
-            prodEnv.users.forEach((user) => {
+            stageEnv.users.forEach((user) => {
                 it('Logs in with user: ' + user.name, function () {
-                    cy.visit(prodEnv.url)
-                    cy.get('[name=email]').type(user.username)
-                    cy.get('[name=password]').type(user.password)
-                    cy.get('[type=submit]').click()
+                    cy.visit(stageEnv.url);
+                    cy.get('[name=email]').clear().type(user.username);
+                    cy.get('[name=password]').clear().type(user.password);
+                    cy.get('[type=submit]').click();
+
+                    cy.url().should('include', 'stage-profile.performplus.pwc.com');
+                    cy.title().should('eq', 'PerformPlus');
 
                     if (user.isTeamLeader) {
                         cy.url().should('include', '/employeeDashboard')

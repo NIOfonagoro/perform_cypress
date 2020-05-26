@@ -13,7 +13,7 @@ describe('KPI flow', () => {
     beforeEach(function () {
         cy.viewport(1280, 720);
         cy.visit(stageEnv.url);
-        cy.login('nicholas+luffy@play-consult.net', 'Perform0501%');
+        cy.login('nicholas+luffy@play-consult.net', 'Perform&0601');
         cy.wait(3000);
         cy.checkWhatsNew();
     })

@@ -1,6 +1,6 @@
 const { stageConfig } = require('../../../configs/stageEnvsConfig');
 
-const stageEnv = stageConfig[bpStage];
+const stageEnv = stageConfig['qaTestStage'];
 
 
 describe('Create New User', () => {

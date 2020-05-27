@@ -1,18 +1,21 @@
 const { currentConfig } = require('../../../configs/stageEnvsConfig');
+const { qaConfig } = require('../../../configs/qatestConfig');
 const demoStageUrl = currentConfig.url;
-
+const qaStageEnvDetails = qaConfig.stage;
 describe('Navbar/Page Functionaity', () => {
 
     before(function () {
         cy.viewport(1280, 720);
-        cy.visit(demoStageUrl);
+        cy.visit(qaStageEnvDetails.url);
 
     })
 
-    it('should display error message', () => {
-        cy.login('nicholas+luffy@play-consult.net', 'Perform#0401');
+    it('navigate to all pages', () => {
+        cy.login(qaStageEnvDetails.adminUser.email, qaStageEnvDetails.password);
 
-        cy.url().should('include', 'https://demo-stage-profile.performplus.pwc.com');
+        cy.wait(3000);
+        cy.url().should('include', '/dashboard');
+        //cy.url().contains(/^b\w+/);
         cy.title().should('eq', 'PerformPlus');
 
         cy.get('#nav-bar-Dashboard').click();

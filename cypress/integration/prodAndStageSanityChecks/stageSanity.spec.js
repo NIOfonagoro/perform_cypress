@@ -1,5 +1,5 @@
-const { currentConfig } = require('../../../configs/stageEnvsConfig');
-const { qaConfig } = require('../../../configs/qatestConfig');
+const { currentConfig } = require('../../configs/stageEnvsConfig');
+const { qaConfig } = require('../../configs/qatestConfig');
 const demoStageUrl = currentConfig.url;
 const qaStageEnvDetails = qaConfig.stage;
 describe('Navbar/Page Functionaity', () => {

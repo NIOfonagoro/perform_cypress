@@ -10,3 +10,5 @@ export PERFORM_TEST_ENV="stg"
 export PERFORM_TEST_ENV="prod"
 node cypress/test.js
 unset GANGGANG 
+
+docker build -t performcypress .

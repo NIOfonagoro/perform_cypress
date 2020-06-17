@@ -1,4 +1,4 @@
-const { prodConfig } = require('../../../configs/prodEnvsConfig');
+const { prodConfig } = require('../../configs/prodEnvsConfig');
 
 describe('Login Sanity Test for all production environments', function () {
 
@@ -19,7 +19,8 @@ describe('Login Sanity Test for all production environments', function () {
                     cy.get('[name=password]').clear().type(user.password);
                     cy.get('[type=submit]').click();
 
-                    cy.url().should('include', 'profile.performplus.pwc.com');
+                    cy.wait(3000);
+                    cy.url().should('include', '/dashboard');
                     cy.title().should('eq', 'PerformPlus');
 
                     // Gets rid of Terms and Conditions Dialog for new users

@@ -1,4 +1,4 @@
-const { stageConfig } = require('../../../configs/stageEnvsConfig');
+const { stageConfig } = require('../../configs/stageEnvsConfig');
 
 const stageEnv = stageConfig['qaTestStage'];
 
